@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/member_top"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="10dp"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/member_toolbar"
+                style="@style/Toolbar"
+                android:background="@color/colorPrimary"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/member_back"
+                        style="@style/ImageView.Hamburger"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back" />
+
+                    <TextView
+                        android:id="@+id/member_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/member_back"
+                        android:text="@string/add_member"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/guillotine_item_text_size" />
+
+                    <ImageView
+                        android:id="@+id/member_del"
+                        style="@style/ImageView.Hamburger"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_delete" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="20dp">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/jiedairen"
+                    android:paddingLeft="5dp"
+                    app:met_errorColor="@color/white"
+                    android:textCursorDrawable="@null"
+                    android:textSize="30sp"
+                    android:maxLength="20"
+                    app:met_baseColor="@color/white"
+                    app:met_floatingLabel="normal"
+                    app:met_hideUnderline="true"
+                    app:met_primaryColor="@color/white"
+                    app:met_singleLineEllipsis="true" />
+            </RelativeLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/jiedairen_tip"
+                android:textColor="#60000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/member_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        app:fab_shadowColor="#22000000"
+        android:visibility="invisible"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginTop="165dp"
+        android:src="@drawable/ic_done" />
+</FrameLayout>

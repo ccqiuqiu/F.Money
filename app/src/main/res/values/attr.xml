@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_names">
+        <item>"Anastasia Druzhinina"</item>
+        <item>"Andriy Hristyan"</item>
+        <item>"Dmitriy Dovbnya"</item>
+        <item>"Dmitry Denisenko"</item>
+        <item>"Eduard Baev"</item>
+        <item>"Iliya Bershadskiy"</item>
+        <item>"Kirill Penzykov"</item>
+        <item>"Konstantin Rudenko"</item>
+        <item>"Oleksii Shliama"</item>
+        <item>"Pavel Apisov"</item>
+        <item>"Vadim Ooleynik"</item>
+    </string-array>
+
+    <declare-styleable name="PersistentSearchView">
+        <attr name="persistentSV_searchTextColor" format="color"/>
+        <attr name="persistentSV_logoDrawable" format="reference"/>
+        <attr name="persistentSV_editTextColor" format="color"/>
+        <attr name="persistentSV_editHintText" format="string"/>
+        <attr name="persistentSV_editHintTextColor" format="color"/>
+        <attr name="persistentSV_searchCardElevation" format="dimension"/>
+        <attr name="persistentSV_displayMode" format="enum">
+            <enum name="menuItem" value="0" />
+            <enum name="toolbar" value="1" />
+        </attr>
+        <attr name="persistentSV_homeButtonColor" format="color"/>
+        <attr name="persistentSV_customToolbarHeight" format="dimension"/>
+        <attr name="persistentSV_homeButtonMode" format="enum">
+            <enum name="arrow" value="0" />
+            <enum name="burger" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="WheelView">
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="selectedTextSize" format="dimension" />
+        <attr name="unitHight" format="dimension" />
+        <attr name="itemNumber" format="integer"/>
+        <attr name="lineColor" format="color" />
+        <attr name="lineHeight" format="dimension" />
+        <attr name="maskHight" format="dimension"/>
+        <attr name="noEmpty" format="boolean"/>
+        <attr name="isEnable" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="lwvWheelView">
+        <attr name="lwvHighlightColor" format="color|reference"/>
+        <attr name="lwvMarkColor" format="color|reference"/>
+        <attr name="lwvMarkTextColor" format="color|reference"/>
+        <attr name="lwvIntervalFactor" format="float"/>
+        <attr name="lwvMarkRatio" format="float"/>
+        <attr name="lwvCursorSize" format="dimension"/>
+        <attr name="lwvMarkTextSize" format="dimension"/>
+        <attr name="lwvCenterMarkTextSize" format="dimension"/>
+        <attr name="lwvAdditionalCenterMark" format="string|reference"/>
+    </declare-styleable>
+</resources>

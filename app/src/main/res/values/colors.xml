@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorPrimary">#FF795548</color>
+    <color name="colorPrimaryDark">#6D4C41</color>
+    <color name="colorAccent">#ff8f00</color>
+
+    <color name="colorLiuShui_0">#FF4081</color>
+    <color name="colorLiuShui_1">#009688</color>
+
+    <color name="background">#383547</color>
+
+    <color name="text_color_bai">#80ffffff</color>
+    <color name="text_color_hei">#80000000</color>
+    <color name="text_color">#ADA8C9</color>
+    <color name="textFuhei">#55000000</color>
+
+    <color name="gray">#21252a</color>
+    <color name="orange">#ff8f00</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#ff14445a</color>
+
+
+
+</resources>

@@ -1,0 +1,40 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="guillotine_small_margin">24dp</dimen>
+    <dimen name="guillotine_medium_margin">48dp</dimen>
+    <dimen name="guillotine_large_margin">100dp</dimen>
+    <dimen name="guillotine_divider_height">40dp</dimen>
+
+    <dimen name="guillotine_item_text_size">20sp</dimen>
+    <dimen name="guillotine_actionbar_background_view_height">35dp</dimen>
+
+    <dimen name="text_size_toolbar_title">25sp</dimen>
+    <dimen name="text_size_profile_toolbar_title">20sp</dimen>
+    <dimen name="corner_radius_oval">16dp</dimen>
+    <dimen name="height_toolbar">56dp</dimen>
+    <dimen name="height_profile_image_0">150dp</dimen>
+    <dimen name="height_profile_image">70dp</dimen>
+    <dimen name="height_profile_picture_with_toolbar">150dp</dimen>
+    <dimen name="size_button_message">60dp</dimen>
+    <dimen name="margin_top_button_message">112dp</dimen>
+
+    <dimen name="search_card_visible_padding_toolbar_mode">8dp</dimen>
+    <dimen name="search_card_visible_padding_menu_item_mode">4dp</dimen>
+    <dimen name="search_card_default_card_elevation">2dp</dimen>
+    <dimen name="search_card_height">48dp</dimen>
+    <dimen name="text_title">24dp</dimen>
+
+    <!--Welcome sliding page  -->
+    <dimen name="welcome_images_size">360.0dip</dimen>
+    <dimen name="welcome_images_margin_top">0.0dip</dimen>
+    <dimen name="welcome_heading_margin_bottom">12.0dip</dimen>
+    <dimen name="welcome_text_margin">48.0dip</dimen>
+    <dimen name="welcome_heading">24.0sp</dimen>
+    <dimen name="welcome_text_margin_bottom">12.0dip</dimen>
+    <dimen name="welcome_content_min_height">96.0dip</dimen>
+    <dimen name="welcome_content">16.0sp</dimen>
+</resources>

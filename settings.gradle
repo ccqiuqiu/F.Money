@@ -1,0 +1,1 @@
+include ':app', ':library-PersistentSearchView', ':library-MaterialSettingsLibrary', ':library-FabTransitionLayout', ':library-AndroidTagView', ':library-PullToRefresh', ':library-ProgressFragment'

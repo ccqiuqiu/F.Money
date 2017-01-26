@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_zhichu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/tag_zc" />
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tc_zhichu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:padding="10dp"
+                    app:container_background_color="#00000000"
+                    app:container_border_color="#00000000"
+                    app:container_enable_drag="true"
+                    app:horizontal_interval="10dp"
+                    app:tag_border_color="#00000000"
+                    app:tag_clickable="true"
+                    app:tag_text_color="@color/white"
+                    app:tag_theme="none"
+                    app:tag_text_size="16sp"
+                    app:tag_corner_radius="10dp"
+                    app:tag_vertical_padding="7dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_zhichu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/add_cate_input"
+                        android:imeOptions="actionSend"
+                        android:maxLength="16"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        app:met_clearButton="true"
+                        app:met_floatingLabel="normal"
+                        app:met_hideUnderline="false"
+                        app:met_maxCharacters="16" />
+
+                    <com.rey.material.widget.Button
+                        style="@style/LightFlatWaveButtonRippleStyle"
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:id="@+id/btn_zhichu"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/btn_background_hong"
+                        android:padding="5dp"
+                        android:text="@string/save"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"></View>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_shouru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/tag_sr" />
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tc_shouru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:padding="10dp"
+                    app:container_background_color="#00000000"
+                    app:container_border_color="#00000000"
+                    app:container_enable_drag="true"
+                    app:horizontal_interval="10dp"
+                    app:tag_border_color="#00000000"
+                    app:tag_clickable="true"
+                    app:tag_text_color="@color/white"
+                    app:tag_theme="none"
+                    app:tag_corner_radius="10dp"
+                    app:tag_vertical_padding="7dp"
+                    app:tag_text_size="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/et_shouru"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/add_cate_input"
+                        android:imeOptions="actionSend"
+                        android:maxLength="16"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        app:met_clearButton="true"
+                        app:met_floatingLabel="normal"
+                        app:met_hideUnderline="false"
+                        app:met_maxCharacters="16" />
+
+                    <com.rey.material.widget.Button
+                        style="@style/LightFlatWaveButtonRippleStyle"
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:id="@+id/btn_shouru"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/btn_background_hong"
+                        android:padding="5dp"
+                        android:text="@string/save"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

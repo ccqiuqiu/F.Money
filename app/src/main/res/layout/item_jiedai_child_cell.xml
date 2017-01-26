@@ -1,0 +1,146 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:stateListAnimator="@anim/touch_raise"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA">
+
+            <View
+                android:id="@+id/divider"
+                style="@style/MdDivider" />
+
+            <View
+                android:id="@+id/divider_duan"
+                style="@style/MdDivider"
+                android:layout_marginLeft="70dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ymd_ym"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="201506" />
+
+                <TextView
+                    android:id="@+id/rq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/xq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周一"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/ll1"
+                android:layout_toStartOf="@+id/sum"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/flg_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_input" />
+
+                    <TextView
+                        android:id="@+id/flg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:maxLength="16"
+                        android:singleLine="true"
+                        android:text="收债"
+                        android:textSize="14sp" />
+                    <ImageView
+                        android:id="@+id/account_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_account" />
+
+                    <TextView
+                        android:id="@+id/account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="账户" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll2"
+                    android:paddingTop="5dp"
+                    android:singleLine="true"
+                    android:text="备注"
+                    android:textColor="@color/textFuhei" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:text="99.00"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:visibility="gone" />
+</LinearLayout>

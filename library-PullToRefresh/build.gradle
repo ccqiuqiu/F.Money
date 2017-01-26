@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'Android-Pull-To-Refresh'
+
+    publishedGroupId = 'com.biao'
+    libraryName = 'pulltorefresh'
+    artifact = 'pulltorefresh'
+
+    libraryDescription = 'Android pull down to refresh and pull up to refresh!'
+
+    siteUrl = 'https://github.com/BiaoWu/Android-Pull-To-Refresh'
+    gitUrl = 'https://github.com/BiaoWu/Android-Pull-To-Refresh.git'
+
+    libraryVersion = '1.0.0-beta3'
+
+    developerId = 'Bill'
+    developerName = 'Bill Wu'
+    developerEmail = 'biaoliu_2007@163.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+}

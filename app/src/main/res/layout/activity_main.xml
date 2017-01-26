@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--toolbar下面的色块-->
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="104dp"
+        android:background="@color/colorPrimary"></View>
+    <!--菜单键动画需要的view-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/guillotine_actionbar_background_view_height"
+        android:layout_gravity="top" />
+    <!--主内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<android.support.design.widget.AppBarLayout-->
+        <!--theme="@style/AppTheme.AppBarOverlay"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            android:background="@color/colorPrimary"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/content_hamburger"
+                style="@style/ImageView.Hamburger"
+                android:src="@drawable/ic_menu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/guillotine_item_text_size" />
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabTextColor="@color/text_color_bai" />
+        <!--</android.support.design.widget.AppBarLayout>-->
+        <com.ccqiuqiu.fmoney.View.MyViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <!--搜索相关的view-->
+    <View
+        android:id="@+id/view_search_tint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:background="#88000000"
+        android:elevation="2dp"
+        android:layerType="hardware"
+        android:visibility="gone" />
+    <org.cryse.widget.persistentsearch.PersistentSearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:persistentSV_customToolbarHeight="56dp"
+        app:persistentSV_displayMode="menuItem"
+        app:persistentSV_editHintText="@string/search"
+        app:persistentSV_editHintTextColor="#50000000"
+        app:persistentSV_editTextColor="@color/gray"
+        app:persistentSV_homeButtonMode="burger"
+        app:persistentSV_searchCardElevation="2dp"
+        app:persistentSV_searchTextColor="@color/gray" />
+    <!--detail页面的toolbar-->
+    <RelativeLayout
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/toolbar_profile_back"
+            style="@style/ImageView.Hamburger"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/toolbar_profile_back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/guillotine_item_text_size" />
+
+        <ImageView
+            android:id="@+id/detail_account_search"
+            style="@style/ImageView.Hamburger"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/detail_del"
+            android:src="@drawable/ic_account_search" />
+        <ImageView
+            android:id="@+id/detail_del"
+            style="@style/ImageView.Hamburger"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_delete" />
+    </RelativeLayout>
+
+    <!--添加流水-->
+    <include layout="@layout/activity_liushui"></include>
+
+    <!--fab-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/fab_margin"
+            app:fab_shadowColor="#22000000"
+            android:src="@drawable/fab_add" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="5dp">
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/fab_margin"
+            app:menu_shadowColor="#22000000"
+            fab:menu_labels_colorNormal="@color/text_color_hei"
+            fab:menu_labels_colorPressed="@color/text_color_hei"
+            fab:menu_animationDelayPerItem="50"
+            android:visibility="invisible"
+            fab:menu_backgroundColor="@android:color/transparent"
+            fab:menu_icon="@drawable/fab_add">
+
+            <!--<com.github.clans.fab.FloatingActionButton-->
+                <!--android:id="@+id/fab_member"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_member"-->
+                <!--app:fab_shadowColor="#22000000"-->
+                <!--app:fab_shadowRadius="6dp"-->
+                <!--app:fab_shadowXOffset="1dp"-->
+                <!--fab:fab_label="@string/member"-->
+                <!--fab:fab_size="mini" />-->
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_jieru"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_input"
+                app:fab_shadowColor="#22000000"
+                app:fab_shadowRadius="6dp"
+                app:fab_shadowXOffset="1dp"
+                fab:fab_label="@string/jieru"
+                fab:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_jiechu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_output"
+                app:fab_shadowColor="#22000000"
+                app:fab_shadowRadius="6dp"
+                app:fab_shadowXOffset="1dp"
+                fab:fab_label="@string/jiechu"
+                fab:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_shouzhai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shouzhai"
+                app:fab_shadowColor="#22000000"
+                app:fab_shadowRadius="6dp"
+                app:fab_shadowXOffset="1dp"
+                fab:fab_label="@string/shouzhai"
+                fab:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_huanzhai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_huanzhai"
+                app:fab_shadowColor="#22000000"
+                app:fab_shadowRadius="6dp"
+                app:fab_shadowXOffset="1dp"
+                fab:fab_label="@string/huanzhai"
+                fab:fab_size="mini" />
+        </com.github.clans.fab.FloatingActionMenu>
+    </FrameLayout>
+
+    <com.bowyer.app.fabtransitionlayout.BottomSheetLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        app:ft_color="@color/colorAccent"
+        app:ft_container_gravity="center">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/fab_margin"
+            android:paddingRight="@dimen/fab_margin"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/add_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/add_account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_title" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_title"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/account_name"
+                android:imeOptions="actionNext"
+                android:maxLength="20"
+                android:paddingLeft="@dimen/fab_margin"
+                android:singleLine="true"
+                app:met_clearButton="true"
+                app:met_baseColor="@color/white"
+                app:met_hideUnderline="true"
+                app:met_primaryColor="@color/white"
+                app:met_errorColor="@color/white"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@color/white"
+                app:met_maxCharacters="20" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_sum_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/et_name"
+                android:layout_marginTop="-10dp"
+                android:layout_toLeftOf="@+id/btn"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/action_sum"
+                android:imeOptions="actionSend"
+                app:met_baseColor="@color/white"
+                app:met_hideUnderline="true"
+                app:met_primaryColor="@color/white"
+                android:maxLength="12"
+                android:inputType="numberSigned|numberDecimal"
+                android:paddingLeft="@dimen/fab_margin"
+                app:met_floatingLabel="normal"
+                android:singleLine="true"
+                app:met_clearButton="true"/>
+
+            <com.rey.material.widget.Button
+                style="@style/LightFlatWaveButtonRippleStyle2"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/btn"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_alignBottom="@id/et_sum_account"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/save"
+                android:background="@drawable/btn_background_white" />
+
+        </RelativeLayout>
+    </com.bowyer.app.fabtransitionlayout.BottomSheetLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+</FrameLayout>

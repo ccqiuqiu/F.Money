@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:orientation="vertical">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/login_email"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/login_email"
+        android:inputType="textWebEmailAddress"
+        android:singleLine="true"
+        app:met_floatingLabel="normal"
+        app:met_baseColor="@color/orange"
+        app:met_primaryColor="@color/orange"
+        app:met_singleLineEllipsis="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/login_password"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:password="true"
+        android:hint="@string/login_password"
+        android:inputType="textWebEmailAddress"
+        android:imeOptions="actionSend"
+        android:singleLine="true"
+        app:met_floatingLabel="normal"
+        app:met_baseColor="@color/orange"
+        app:met_primaryColor="@color/orange"
+        app:met_singleLineEllipsis="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/btn_login_commit"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cpb_cornerRadius="2dp"
+            app:cpb_colorIndicator="#ff9800"
+            app:cpb_selectorComplete="@drawable/btn_complete_state_selector"
+            app:cpb_selectorError="@drawable/btn_error_state_selector"
+            app:cpb_selectorIdle="@drawable/btn_idle_state_selector"
+            app:cpb_textComplete="@string/reg_success"
+            app:cpb_textIdle="@string/login" />
+
+        <com.rey.material.widget.Button
+            style="@style/LightFlatWaveButtonRippleStyle"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:id="@+id/btn_login_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_background_t2"
+            android:text="@string/cancel"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

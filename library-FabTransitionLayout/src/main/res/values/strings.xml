@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fabtransitionlayout</string>
+
+
+    <string name="cc_changed">mBottomSheetLayout.expandFab(mEtSum)传一个EditView进去，
+        调用mBottomSheetLayout.contractFab()时会先关闭输入法</string>
+</resources>

@@ -1,0 +1,24 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true">
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:drawableLeft="@drawable/ic_tips"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="tipstipstipstipstipstips"
+        android:layout_margin="5dp"
+        android:textColor="#60000000" />
+
+</android.support.v7.widget.CardView>

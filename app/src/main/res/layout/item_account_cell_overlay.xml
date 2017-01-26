@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.codetail.widget.RevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--<include-->
+    <!--layout="@layout/item_account_cell"-->
+    <!--android:id="@+id/wrapper_list_item" />-->
+
+    <View
+        android:id="@+id/view_avatar_overlay"
+        android:layout_width="@dimen/height_profile_image"
+        android:layout_height="@dimen/height_profile_image"
+        android:background="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/layout_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_profile_image_0"
+        android:layout_alignBottom="@+id/wrapper_list_item"
+        android:layout_alignTop="@+id/wrapper_list_item"
+        android:background="@color/colorAccent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="10dp"
+        android:visibility="invisible">
+
+        <lecho.lib.hellocharts.view.ColumnChartView
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_name_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/account_name"
+            android:imeOptions="actionNext"
+            android:maxLength="20"
+            android:textCursorDrawable="@null"
+            android:singleLine="true"
+            android:textSize="24sp"
+            app:met_baseColor="@color/white"
+            app:met_primaryColor="@color/white"
+            app:met_errorColor="@color/white"
+            app:met_floatingLabelTextColor="@color/white"
+            app:met_hideUnderline="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_sum_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_name"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/btn"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:textCursorDrawable="@null"
+            android:focusableInTouchMode="true"
+            android:hint="@string/action_sum"
+            android:imeOptions="actionSend"
+            android:inputType="numberSigned|numberDecimal"
+            android:maxLength="12"
+
+            android:paddingLeft="@dimen/fab_margin"
+            android:singleLine="true"
+            android:textSize="35sp"
+            app:met_baseColor="@color/white"
+            app:met_primaryColor="@color/white"
+            app:met_hideUnderline="true" />
+    </RelativeLayout>
+
+</io.codetail.widget.RevealFrameLayout>

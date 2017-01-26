@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/juanzeng_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/juanzeng_sum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/juanzeng_sum"
+            android:numeric="decimal"
+            android:singleLine="true"
+            app:met_baseColor="@color/orange"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/orange"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/juanzeng_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/juanzeng_name"
+            android:singleLine="true"
+            app:met_baseColor="@color/orange"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/orange"
+            app:met_singleLineEllipsis="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/zengfu_tip"
+            android:textColor="#40000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <com.rey.material.widget.Button
+                style="@style/LightFlatWaveButtonRippleStyle"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/btn_juanzeng_zhifubao"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_zhifubao"
+                android:drawableLeft="@drawable/ic_zhifubao"
+                android:paddingLeft="10dp"
+                android:text="支付宝付款"
+                android:textColor="@color/white" />
+
+            <com.rey.material.widget.Button
+                style="@style/LightFlatWaveButtonRippleStyle"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:id="@+id/btn_juanzeng_weixin"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_background_weixin"
+                android:drawableLeft="@drawable/ic_weixin"
+                android:paddingLeft="10dp"
+                android:text="微信付款"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/paying"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>
