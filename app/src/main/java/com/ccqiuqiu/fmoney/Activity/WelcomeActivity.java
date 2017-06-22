@@ -59,7 +59,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        }, 1000);
+        }, 0);
     }
     //返回按钮回调
     long[] mHits = new long[2];
