@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:paddingBottom="10dp"
+            android:layout_weight="0"
             android:theme="@style/AppTheme.AppBarOverlay"
             android:visibility="invisible">
 
@@ -104,7 +105,7 @@
                     android:id="@+id/et_account"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     app:itemNumber="3"
                     app:lineColor="#10FFFFFF"
                     app:lineHeight="1dp"
@@ -119,7 +120,7 @@
                 <RelativeLayout
                     android:id="@+id/layout"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_weight="1">
                     <ImageView
                         android:id="@+id/img_to"
