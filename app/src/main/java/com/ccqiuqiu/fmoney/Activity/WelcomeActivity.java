@@ -58,8 +58,9 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 finish();
+                overridePendingTransition(0, 0);
             }
-        }, 0);
+        }, 100);
     }
     //返回按钮回调
     long[] mHits = new long[2];
