@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\5Android\\workspaceAndroidStudio\\F.Money\\library-ProgressFragment\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_appbar_state_list_animator.xml",
-        "source": "C:\\Users\\95353\\.android\\build-cache\\fae0cfa3f60b36cc7c0f9684a18788940787371f\\output\\res\\anim-v21\\design_appbar_state_list_animator.xml"
+        "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/cc/.android/build-cache/fd9e3321a197abf79717b78e8b93f2427d07e62f/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "D:\\5Android\\workspaceAndroidStudio\\F.Money\\library-ProgressFragment\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\95353\\.android\\build-cache\\fae0cfa3f60b36cc7c0f9684a18788940787371f\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+        "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/release/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/cc/.android/build-cache/fd9e3321a197abf79717b78e8b93f2427d07e62f/output/res/anim-v21/design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "D:\\5Android\\workspaceAndroidStudio\\F.Money\\library-ProgressFragment\\build\\intermediates\\res\\merged\\release\\anim-v21\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\95353\\.android\\build-cache\\fae0cfa3f60b36cc7c0f9684a18788940787371f\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+        "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/release/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/cc/.android/build-cache/fd9e3321a197abf79717b78e8b93f2427d07e62f/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     }
 ]

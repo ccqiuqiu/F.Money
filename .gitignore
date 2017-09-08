@@ -7,3 +7,5 @@
 /build
 /captures
 /发布相关
+/app/build
+/*/build/*

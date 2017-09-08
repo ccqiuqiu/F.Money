@@ -610,11 +610,12 @@ public class MainActivity extends BaseActivity implements
         mFlg.setOnWheelItemSelectedListener(new WheelViewH.OnWheelItemSelectedListener() {
             @Override
             public void onWheelItemChanged(WheelViewH wheelView, int position) {
+                changeFlg(position);
             }
 
             @Override
             public void onWheelItemSelected(WheelViewH wheelView, int position) {
-                changeFlg(position);
+                //changeFlg(position);
             }
         });
         mLiushuiFab.setColorNormal(App.colorAccent);
@@ -702,6 +703,9 @@ public class MainActivity extends BaseActivity implements
             ViewUtils.toast(getString(R.string.err_sum_empty));
             return;
         }
+        Account oldAccount = null;
+        Account oldToAccount = null;
+        Double oldSum = 0D;
         Account account = App.getAccountService().getByName(mEtAccount.getSelectedText());
         Account toAccount = null;
         if (mLiuShuiFlg == BaseModel.FLG_ZHUANCHU) {
@@ -737,6 +741,9 @@ public class MainActivity extends BaseActivity implements
                 }
                 return;
             }
+            oldSum = mLiuShui.getSum();
+            oldAccount = App.getAccountService().getById(mLiuShui.getAccountId());
+            oldToAccount = mLiuShui.getTargetAccountId() != 0 ? App.getAccountService().getById(mLiuShui.getTargetAccountId()) : null;
             //如果由转账修改为支出或收入，要删掉关联的流水
             if ((mLiuShui.getFlg() == BaseModel.FLG_ZHUANCHU || mLiuShui.getFlg() == BaseModel.FLG_ZHUANRU)
                     && mLiuShuiFlg != BaseModel.FLG_ZHUANCHU) {
@@ -744,24 +751,22 @@ public class MainActivity extends BaseActivity implements
                 mLiuShui.setTargetAccountId(0);
             }
         }
+        if(category != null) {
+            mLiuShui.setCategoryId(category.getKey());
+        }
         mLiuShui.setSum(sum);
         mLiuShui.setFlg(mLiuShuiFlg);
         mLiuShui.setTime(date.getTime());
         mLiuShui.setAccountId(account.getKey());
         mLiuShui.setDesc(mEtDesc.getText().toString());
         mLiuShui.setYmd(ymd);
-        if (mLiuShuiFlg == BaseModel.FLG_SHOURU || mLiuShuiFlg == BaseModel.FLG_ZHICHU) {
-            mLiuShui.setCategoryId(category.getKey());
-            App.getLiuShuiService().saveOrUpdate(mLiuShui);
-            //处理账户余额
-            double new_sum = MathUtils.add(account.getSum(), sum_sub);
-            account.setSum(new_sum);
-            App.getAccountService().update_my(account);
-        } else {
+        // 保存流水
+        if (toAccount != null) {
             mLiuShui.setTargetAccountId(toAccount.getKey());
-
-            App.getLiuShuiService().saveOrUpdate(mLiuShui);
-
+        }
+        App.getLiuShuiService().saveOrUpdate(mLiuShui);
+        // 如果是转账，还要增加一条关联的流水
+        if (mLiuShuiFlg == BaseModel.FLG_ZHUANCHU) {
             if (isAdd || mTargetLiuShui == null) {
                 mTargetLiuShui = new LiuShui();
             }
@@ -774,18 +779,43 @@ public class MainActivity extends BaseActivity implements
             mTargetLiuShui.setYmd(ymd);
             mTargetLiuShui.setDesc(mEtDesc.getText().toString());
             App.getLiuShuiService().saveOrUpdate(mTargetLiuShui);
-
+        }
+        if (isAdd) {
             //处理账户余额
             double new_sum = MathUtils.add(account.getSum(), sum_sub);
             account.setSum(new_sum);
             App.getAccountService().update_my(account);
-            double new_sum2 = MathUtils.add(toAccount.getSum(), -sum_sub);
-            toAccount.setSum(new_sum2);
-            App.getAccountService().update_my(toAccount);
-        }
-        if (isAdd) {
+            if (toAccount != null) {
+                double new_sum2 = MathUtils.add(toAccount.getSum(), -sum_sub);
+                toAccount.setSum(new_sum2);
+                App.getAccountService().update_my(toAccount);
+            }
             ViewUtils.toast(getString(R.string.save_success));
         } else {
+            // 旧账户还原
+            if (oldAccount != null) {
+                double new_sum = MathUtils.add(oldAccount.getSum(), -oldSum);
+                oldAccount.setSum(new_sum);
+                App.getAccountService().update_my(oldAccount);
+            }
+            if (oldToAccount != null) {
+                double new_sum = MathUtils.add(oldToAccount.getSum(), oldSum);
+                oldToAccount.setSum(new_sum);
+                App.getAccountService().update_my(oldToAccount);
+            }
+            //
+            if (account != null) {
+                account = App.getAccountService().getById(account.getKey());
+                double new_sum = MathUtils.add(account.getSum(), sum);
+                account.setSum(new_sum);
+                App.getAccountService().update_my(account);
+            }
+            if (toAccount != null) {
+                toAccount = App.getAccountService().getById(toAccount.getKey());
+                double new_sum = MathUtils.add(toAccount.getSum(), -sum);
+                toAccount.setSum(new_sum);
+                App.getAccountService().update_my(toAccount);
+            }
             ViewUtils.toast(getString(R.string.edit_success));
         }
         if (closeLiuShuiView || !isAdd) {
