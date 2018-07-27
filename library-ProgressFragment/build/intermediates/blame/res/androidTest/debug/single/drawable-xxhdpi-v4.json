@@ -128,12 +128,12 @@
         "source": "/Users/cc/.android/build-cache/0f8823c6cead3a9e1a1fd6c78b11bef5d84472e3/output/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Users/cc/.android/build-cache/0f8823c6cead3a9e1a1fd6c78b11bef5d84472e3/output/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png",
         "source": "/Users/cc/.android/build-cache/0f8823c6cead3a9e1a1fd6c78b11bef5d84472e3/output/res/drawable-xxhdpi-v4/abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Users/cc/.android/build-cache/0f8823c6cead3a9e1a1fd6c78b11bef5d84472e3/output/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/Users/cc/workspace/5Android/workspaceAndroidStudio/F.Money/library-ProgressFragment/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_list_pressed_holo_dark.9.png",

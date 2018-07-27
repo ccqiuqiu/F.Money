@@ -155,7 +155,7 @@ public class MemberFragment extends Fragment {
         }
         mMember.setName(mName.getText().toString().trim());
         mJieDaiService.saveMemberBindingId(mMember);
-        ViewUtils.toast(getString(R.string.save_success));
+        ViewUtils.toast(getActivity(), getString(R.string.save_success));
 
         if (!isAdd) {//编辑
             mJieDaiFragment.hideMemberFragment();

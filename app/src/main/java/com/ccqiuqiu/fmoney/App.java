@@ -97,7 +97,7 @@ public class App extends Application {
 
     public static void initTestData() {
         try {
-            ViewUtils.toast("initTestData");
+            ViewUtils.toast(null, "initTestData");
             CategoryService categoryService = new CategoryService();
             AccountService accountService = new AccountService();
 
@@ -315,7 +315,7 @@ public class App extends Application {
                     isGz1 = false;
                     isgz2 = false;
                 }
-                ViewUtils.toast("initTestData End");
+                ViewUtils.toast(null, "initTestData End");
             }
         } catch (DbException e) {
             e.printStackTrace();

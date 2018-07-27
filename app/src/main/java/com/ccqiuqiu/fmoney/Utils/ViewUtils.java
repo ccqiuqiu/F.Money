@@ -1,5 +1,6 @@
 package com.ccqiuqiu.fmoney.Utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -20,9 +21,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.ccqiuqiu.fmoney.R;
-import com.github.johnpersano.supertoasts.SuperToast;
 
 import com.ccqiuqiu.fmoney.App;
+import com.github.johnpersano.supertoasts.library.Style;
+import com.github.johnpersano.supertoasts.library.SuperActivityToast;
+import com.github.johnpersano.supertoasts.library.SuperToast;
+import com.github.johnpersano.supertoasts.library.utils.PaletteUtils;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
 import com.nispok.snackbar.enums.SnackbarType;
@@ -43,17 +47,19 @@ public class ViewUtils {
         return App.mContext;
     }
 
-    public static void toast(String content) {
-        //Toast.makeText(getContext(),content,Toast.LENGTH_SHORT).show();
-        SuperToast.cancelAllSuperToasts();
-        SuperToast superToast = new SuperToast(getContext());
-        superToast.setAnimations(SuperToast.Animations.FLYIN);
-        superToast.setDuration(SuperToast.Duration.LONG);
-        superToast.setTextColor(Color.parseColor("#ffffff"));
-        superToast.setTextSize(SuperToast.TextSize.SMALL);
-        superToast.setText(content);
-        //superToast.setBackground(SuperToast.Background.BLUE);
-        superToast.show();
+    public static void toast(Activity activity, String content) {
+        if (activity != null) {
+            SuperActivityToast.cancelAllSuperToasts();
+            SuperActivityToast.create(activity, new Style(), Style.TYPE_STANDARD)
+                    .setText(content)
+                    .setColor(App.colorAccent)
+                    .setDuration(Style.DURATION_SHORT)
+                    .setFrame(Style.FRAME_KITKAT)
+                    .setAnimations(Style.ANIMATIONS_POP)
+                    .show();
+        } else {
+            Toast.makeText(getContext(),content,Toast.LENGTH_SHORT).show();
+        }
     }
 
     public static void snackbar(Context context, String text) {

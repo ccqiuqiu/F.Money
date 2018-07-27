@@ -241,11 +241,11 @@ public class JieDaiLiuShuiFragment extends Fragment {
     private void saveLiuShui(boolean exit) {
         boolean isAdd = false;
         if (mMainActivity.mAccounts == null || mMainActivity.mAccounts.size() == 0) {
-            ViewUtils.toast(getString(R.string.err_no_account));
+            ViewUtils.toast(getActivity(), getString(R.string.err_no_account));
             return;
         }
         if (mMembers == null || mMembers.size() == 0) {
-            ViewUtils.toast(getString(R.string.err_no_member));
+            ViewUtils.toast(getActivity(), getString(R.string.err_no_member));
             return;
         }
         if (mLiuShui == null) {
@@ -269,7 +269,7 @@ public class JieDaiLiuShuiFragment extends Fragment {
             }
         }
         if (Math.abs(sum) - 0 <= 0) {
-            ViewUtils.toast(getString(R.string.err_sum_empty));
+            ViewUtils.toast(getActivity(), getString(R.string.err_sum_empty));
             return;
         }
 
@@ -304,7 +304,7 @@ public class JieDaiLiuShuiFragment extends Fragment {
         member.setSum(new_sum_member);
         mJieDaiService.updateMember(member);
 
-        ViewUtils.toast(getString(R.string.save_success));
+        ViewUtils.toast(getActivity(), getString(R.string.save_success));
 
         if (exit) {
             mJieDaiFragment.hideJieDaiLiuShuiFragment();

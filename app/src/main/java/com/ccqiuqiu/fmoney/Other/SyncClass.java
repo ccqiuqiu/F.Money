@@ -38,8 +38,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import c.b.N;
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.CountListener;
 import cn.bmob.v3.listener.DeleteListener;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
@@ -323,7 +325,7 @@ public class SyncClass {
 
         query.and(and);
 
-        query.setLimit(100);
+        query.setLimit(500);
         //System.out.println("---下载Category开始--------");
         query.findObjects(mContext, new FindListener<CategoryBmob>() {
             @Override
@@ -462,7 +464,7 @@ public class SyncClass {
 
         query.and(and);
 
-        query.setLimit(100);
+        query.setLimit(500);
         //System.out.println("---下载Member开始--------");
         query.findObjects(mContext, new FindListener<MemberBmob>() {
             @Override
@@ -728,6 +730,8 @@ public class SyncClass {
     }
 
     private void syncLiuShui() {
+        // 流水有很多，但是api一次最多只能查询500条，所以要一次查500，循环查出所有
+
         BmobQuery<LiuShuiBmob> query = new BmobQuery<>();
         query.addWhereEqualTo("userId", App.mUser.getObjectId());
 
@@ -738,30 +742,59 @@ public class SyncClass {
 
         query.and(and);
 
-        query.setLimit(10000);
-       // System.out.println("---下载LiuShui开始--------");
-        query.findObjects(mContext, new FindListener<LiuShuiBmob>() {
-            @Override
-            public void onSuccess(List<LiuShuiBmob> list) {
-                try {
-                    //System.out.println("---下载LiuShui完成，开始保存--------");
-                    if (list != null) {
-                        //System.out.println("--syncLiuShui-list--------" + list.size());
-                       App.getLiuShuiService().sync(list);
-                    }
-                    //System.out.println("---保存LiuShui完成，开始上传--------");
-                    uploadLiuShui();
-                } catch (Exception e) {
-                    syncError(6789, e.toString(), "syncLiuShui");
-                    e.printStackTrace();
-                }
-            }
+        query.count(mContext, LiuShuiBmob.class, new CountListener(){
 
             @Override
-            public void onError(int i, String s) {
-                syncError(i, s, "syncLiuShui_findObjects");
+            public void onSuccess(int i) {
+                int pageNum = 1;
+                List<LiuShuiBmob> list = new ArrayList<>();
+                loopLoadLiuShui(pageNum, i, list);
+            }
+            @Override
+            public void onFailure(int i, String s) {
             }
         });
+
+    }
+    private void loopLoadLiuShui(final int pageNum, final int total, final List<LiuShuiBmob> list) {
+        if (list.size() >= total) {
+            App.getLiuShuiService().sync(list);
+            uploadLiuShui();
+        } else {
+            BmobQuery<LiuShuiBmob> query = new BmobQuery<>();
+            query.addWhereEqualTo("userId", App.mUser.getObjectId());
+
+            List<BmobQuery<LiuShuiBmob>> and = new ArrayList<>();
+            BmobQuery<LiuShuiBmob> query_and = new BmobQuery<>();
+            query_and.addWhereGreaterThan("lastEditTime", App.mLastSyncTime);
+            and.add(query_and);
+
+            query.and(and);
+
+            query.setSkip(500 * (pageNum - 1));
+            query.setLimit(500);
+
+            // System.out.println("---下载LiuShui开始--------");
+            query.findObjects(mContext, new FindListener<LiuShuiBmob>() {
+                @Override
+                public void onSuccess(List<LiuShuiBmob> list2) {
+                    try {
+                        if (list2 != null) {
+                            list.addAll(list2);
+                        }
+                        loopLoadLiuShui(pageNum + 1, total, list);
+                    } catch (Exception e) {
+                        syncError(6789, e.toString(), "syncLiuShui");
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onError(int i, String s) {
+                    syncError(i, s, "syncLiuShui_findObjects");
+                }
+            });
+        }
     }
 
     private void uploadLiuShui() {

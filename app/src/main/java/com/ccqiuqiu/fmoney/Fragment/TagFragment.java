@@ -191,7 +191,7 @@ public class TagFragment extends Fragment implements TextView.OnEditorActionList
                 }
                 mBtnZhiChu.setText(getString(R.string.save));
                 mEtZhiChu.setText("");
-                ViewUtils.toast(getString(R.string.edit_success));
+                ViewUtils.toast(getActivity(), getString(R.string.edit_success));
             } else {
                 Category category = new Category();
                 mEtZhiChu.setText("");
@@ -200,7 +200,7 @@ public class TagFragment extends Fragment implements TextView.OnEditorActionList
                 mTgZhiChu.addTag(name);
                 mZhiChuList.add(category);
                 mCategoryService.saveBindingId(category);
-                ViewUtils.toast(getString(R.string.add_success));
+                ViewUtils.toast(getActivity(), getString(R.string.add_success));
             }
 
         } else {
@@ -224,7 +224,7 @@ public class TagFragment extends Fragment implements TextView.OnEditorActionList
                 }
                 mBtnShouRu.setText(getString(R.string.save));
                 mEtShouRu.setText("");
-                ViewUtils.toast(getString(R.string.edit_success));
+                ViewUtils.toast(getActivity(), getString(R.string.edit_success));
             } else {
                 Category category = new Category();
                 mTgShouRu.addTag(name);
@@ -233,7 +233,7 @@ public class TagFragment extends Fragment implements TextView.OnEditorActionList
                 mShouRuList.add(category);
                 mEtShouRu.setText("");
                 mCategoryService.saveBindingId(category);
-                ViewUtils.toast(getString(R.string.add_success));
+                ViewUtils.toast(getActivity(), getString(R.string.add_success));
             }
 
         }
@@ -287,7 +287,7 @@ public class TagFragment extends Fragment implements TextView.OnEditorActionList
                         mCategoryService.del(category);
                         tagContainerLayout.removeTag(position);
                         categories.remove(position);
-                        ViewUtils.toast(getString(R.string.del_success));
+                        ViewUtils.toast(getActivity(), getString(R.string.del_success));
 
                         if(text.equals(mEtShouRu.getText().toString())){
                             mEtShouRu.setText("");

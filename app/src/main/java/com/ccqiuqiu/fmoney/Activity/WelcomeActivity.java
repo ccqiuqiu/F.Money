@@ -71,7 +71,7 @@ public class WelcomeActivity extends AppCompatActivity {
         if (mHits[0] >= System.currentTimeMillis() - 1000) {
             super.onBackPressed();
         } else {
-            ViewUtils.toast(getResources().getString(R.string.exit_qr));
+            ViewUtils.toast(this, getResources().getString(R.string.exit_qr));
         }
     }
 }

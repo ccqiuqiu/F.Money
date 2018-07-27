@@ -217,7 +217,7 @@ public class SettingsActivity extends MaterialSettingsActivity
                         System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
                         mHits[mHits.length - 1] = System.currentTimeMillis();
                         if (mHits[0] >= System.currentTimeMillis() - 1000) {
-                            //App.initTestData();
+                            App.initTestData();
                         }
                     }
                 })

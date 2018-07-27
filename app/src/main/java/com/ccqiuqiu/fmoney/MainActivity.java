@@ -458,7 +458,7 @@ public class MainActivity extends BaseActivity implements
             if (mHits[0] >= System.currentTimeMillis() - 1000) {
                 super.onBackPressed();
             } else {
-                ViewUtils.toast(getResources().getString(R.string.exit_qr));
+                ViewUtils.toast(this, getResources().getString(R.string.exit_qr));
             }
         }
     }
@@ -490,7 +490,7 @@ public class MainActivity extends BaseActivity implements
             e.printStackTrace();
         }
         if (mPaySum == 0) {
-            ViewUtils.toast(getString(R.string.err_sum_empty));
+            ViewUtils.toast(this, getString(R.string.err_sum_empty));
             return;
         }
         if (aliOrWechat) {
@@ -531,9 +531,9 @@ public class MainActivity extends BaseActivity implements
                             juanzengSum.setEnabled(true);
                             System.out.println("=========" + i + ":" + s);
                             if (i == 7777) {
-                                ViewUtils.toast(getString(R.string.err_juanzeng_weixin_uninstall));
+                                ViewUtils.toast(MainActivity.this, getString(R.string.err_juanzeng_weixin_uninstall));
                             } else if (i == 8888) {
-                                ViewUtils.toast(getString(R.string.err_juanzeng_weixin_buzhic));
+                                ViewUtils.toast(MainActivity.this, getString(R.string.err_juanzeng_weixin_buzhic));
                             } else if (i == -3) {
                                 mJuanzengDialog.dismiss();
                                 SnackbarManager.show(Snackbar.with(MainActivity.this)
@@ -549,9 +549,9 @@ public class MainActivity extends BaseActivity implements
                                             }
                                         }));
                             } else if (i == 6001 || i == -2) {
-                                ViewUtils.toast(getString(R.string.err_juanzeng_zhifubao_cannel));
+                                ViewUtils.toast(MainActivity.this, getString(R.string.err_juanzeng_zhifubao_cannel));
                             } else {
-                                ViewUtils.toast(getString(R.string.err_juanzeng));
+                                ViewUtils.toast(MainActivity.this, getString(R.string.err_juanzeng));
                             }
                         }
 
@@ -561,7 +561,7 @@ public class MainActivity extends BaseActivity implements
                         }
                     });
         } catch (Exception e) {
-            ViewUtils.toast(getString(R.string.err_pay_no));
+            ViewUtils.toast(MainActivity.this, getString(R.string.err_pay_no));
             e.printStackTrace();
         }
 
@@ -678,11 +678,11 @@ public class MainActivity extends BaseActivity implements
         }
         if (mLiuShuiFlg != BaseModel.FLG_ZHUANCHU &&
                 (mCategories == null || mCategories.size() == 0)) {
-            ViewUtils.toast(getString(R.string.err_no_cate));
+            ViewUtils.toast(this, getString(R.string.err_no_cate));
             return;
         }
         if (mAccounts == null || mAccounts.size() == 0) {
-            ViewUtils.toast(getString(R.string.err_no_account));
+            ViewUtils.toast(this, getString(R.string.err_no_account));
             return;
         }
         double sum = 0.00, sum_sub = 0.00;
@@ -700,7 +700,7 @@ public class MainActivity extends BaseActivity implements
             }
         }
         if (Math.abs(sum) - 0 <= 0) {
-            ViewUtils.toast(getString(R.string.err_sum_empty));
+            ViewUtils.toast(this, getString(R.string.err_sum_empty));
             return;
         }
         Account oldAccount = null;
@@ -711,7 +711,7 @@ public class MainActivity extends BaseActivity implements
         if (mLiuShuiFlg == BaseModel.FLG_ZHUANCHU) {
             toAccount = App.getAccountService().getByName(mEtToAccount.getSelectedText());
             if (toAccount.getId() == account.getId()) {
-                ViewUtils.toast(getString(R.string.err_eq_account));
+                ViewUtils.toast(this, getString(R.string.err_eq_account));
                 return;
             }
         }
@@ -790,7 +790,7 @@ public class MainActivity extends BaseActivity implements
                 toAccount.setSum(new_sum2);
                 App.getAccountService().update_my(toAccount);
             }
-            ViewUtils.toast(getString(R.string.save_success));
+            ViewUtils.toast(this, getString(R.string.save_success));
         } else {
             // 旧账户还原
             if (oldAccount != null) {
@@ -816,7 +816,7 @@ public class MainActivity extends BaseActivity implements
                 toAccount.setSum(new_sum);
                 App.getAccountService().update_my(toAccount);
             }
-            ViewUtils.toast(getString(R.string.edit_success));
+            ViewUtils.toast(this, getString(R.string.edit_success));
         }
         if (closeLiuShuiView || !isAdd) {
             closeLiuShuiView(mPosition != 2);
@@ -1174,9 +1174,9 @@ public class MainActivity extends BaseActivity implements
             @Override
             public void onError(int i, String s) {
                 if (i == 9010 || i == 9016) {
-                    ViewUtils.toast(getString(R.string.err_net));
+                    ViewUtils.toast(MainActivity.this, getString(R.string.err_net));
                 } else {
-                    ViewUtils.toast(getString(R.string.err_load_data));
+                    ViewUtils.toast(MainActivity.this, getString(R.string.err_load_data));
                 }
             }
         });
@@ -1216,7 +1216,7 @@ public class MainActivity extends BaseActivity implements
 
     @OnPermissionDenied(Manifest.permission.READ_PHONE_STATE)
     void showDeniedForCamera() {
-        ViewUtils.toast(getString(R.string.permission_no));
+        ViewUtils.toast(this, getString(R.string.permission_no));
     }
 
     @Override

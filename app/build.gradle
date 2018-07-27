@@ -8,8 +8,8 @@ android {
         applicationId "com.ccqiuqiu.fmoney"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 15
-        versionName "1.0.5"
+        versionCode 17
+        versionName "1.0.7"
     }
     buildTypes {
         release {
@@ -45,7 +45,7 @@ dependencies {
     compile 'com.rengwuxian.materialedittext:library:2.1.4'//MaterialEditText
     compile 'com.bignerdranch.android:expandablerecyclerview:2.1.0'//bignerdranch/expandable-recycler-view
     compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3'//dmytrodanylyk/circular-progress-button
-    compile 'com.github.johnpersano:supertoasts:1.3.4@aar'//JohnPersano/SuperToasts
+    compile 'com.github.johnpersano:supertoasts:2.0@aar'//JohnPersano/SuperToasts
     compile 'com.nispok:snackbar:2.11.+'//nispok/snackbar
 
     //bmob-sdk ：Bmob的android sdk包

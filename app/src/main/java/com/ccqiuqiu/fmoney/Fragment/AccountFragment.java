@@ -312,7 +312,7 @@ public class AccountFragment extends BaseFragment {
                                 }
                                 animateCloseProfileDetails();
                                 mMainActivity.mLiuShuiFragment.reData();
-                                ViewUtils.toast(getString(R.string.del_success));
+                                ViewUtils.toast(getActivity(), getString(R.string.del_success));
                             }
                         })
                         .show();
@@ -422,7 +422,7 @@ public class AccountFragment extends BaseFragment {
             mAdapter.notifyItemChanged(mPosition + 1);
             showChart(mAdapter.mChart, mAdapter.mTvSum, null);
 
-            ViewUtils.toast(getString(R.string.edit_success));
+            ViewUtils.toast(getActivity(), getString(R.string.edit_success));
         }
 
         ViewUtils.HideKeyboard(mEtNameEdit);
